@@ -1,7 +1,5 @@
 package com.donnut.dogs;
 
-import androidx.annotation.NonNull;
-
 public class DogImage {
 
    private String message;
