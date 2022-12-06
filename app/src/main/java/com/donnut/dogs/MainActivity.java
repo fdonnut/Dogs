@@ -32,7 +32,16 @@ public class MainActivity extends AppCompatActivity {
                     InputStream inputStream = urlConnection.getInputStream();
                     InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-                    String result = bufferedReader.readLine();
+
+                    StringBuilder data = new StringBuilder();
+                    String result;
+                    do {
+                        result = bufferedReader.readLine();
+                        if (result != null) {
+                            data.append(result);
+                        }
+                    } while (result != null);
+
                     Log.d("MainActivity", result);
                 } catch (Exception e) {
                     Log.d("MainActivity", e.toString());
